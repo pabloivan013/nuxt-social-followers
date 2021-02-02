@@ -46,7 +46,7 @@ twitchController.following = async function(req, res) {
                                         user_id, 
                                         undefined, 
                                         cursor)
-    console.log("FOLLOWING: ", response)
+    //console.log("FOLLOWING: ", JSON.stringify(response))
     res.json(response)
 }
 

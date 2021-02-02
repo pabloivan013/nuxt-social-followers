@@ -173,7 +173,7 @@ twitchServices.fetch = async function(endpoint, queryData, queryParamName=undefi
         
         let url = generateUrlQuery(endpoint, queryData, queryParamName, cursor)
         let headers = generateHeader()
-       
+
         let fetchResponse = await fetch(url, {method:'GET', headers: headers}).then(res => res.json())
         
         if (fetchResponse.error) {
@@ -208,6 +208,10 @@ twitchServices.fetch = async function(endpoint, queryData, queryParamName=undefi
                      
                         if (follow_resp.success && follow_resp.data) {
                             aux_data.info = addExtraData(endpoint, follow_resp.data, data)
+                            // Sort by follow_at descending
+                            aux_data.info.sort((a,b)=>{
+                                return new Date(b.followed_at) - new Date(a.followed_at)
+                            })
                         }
                     }
                     
