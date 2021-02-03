@@ -1,6 +1,7 @@
 const { LocalStorage } = require('node-localstorage')
 var localStorage = new LocalStorage('./tokens')
 const fetch = require('node-fetch')
+const { twitchClientId, twitchClientSecret } = require('../../config/env.dev')
 const ApiResponse = require('../../utils/api.response')
 
 var twitchServices = {}
@@ -35,8 +36,8 @@ twitchServices.validateAccessToken = async function(token) {
 twitchServices.generateAccessToken = async function() {
     try {
         var url = `https://id.twitch.tv/oauth2/token`+
-                  `?client_id=${process.env.TWITCH_CLIENT_ID}`+
-                  `&client_secret=${process.env.TWITCH_CLIENT_SECRET}`+
+                  `?client_id=${twitchClientId}`+
+                  `&client_secret=${twitchClientSecret}`+
                   `&grant_type=client_credentials`
         var data = await fetch(url, 
                                 {method: 'POST'})
@@ -57,7 +58,7 @@ twitchServices.generateAccessToken = async function() {
 function generateHeader(){
     let header = {
         'Authorization': `Bearer ${localStorage.getItem('token')}`,
-        'Client-Id': process.env.TWITCH_CLIENT_ID
+        'Client-Id': twitchClientId
     }
     return header
 }
@@ -170,7 +171,7 @@ function generateUrlQuery(endpoint, queryData, queryParamName=undefined, cursor=
 twitchServices.fetch = async function(endpoint, queryData, queryParamName=undefined, cursor=undefined) {
     try {
         let response = new ApiResponse()
-        
+
         let url = generateUrlQuery(endpoint, queryData, queryParamName, cursor)
         let headers = generateHeader()
 
@@ -179,7 +180,7 @@ twitchServices.fetch = async function(endpoint, queryData, queryParamName=undefi
         if (fetchResponse.error) {
             response.success = false
             response.error = fetchResponse.error
-            return response.toJSON()
+            return response
         }
 
         response.success = true
@@ -222,12 +223,12 @@ twitchServices.fetch = async function(endpoint, queryData, queryParamName=undefi
             }
         }
         
-        return response.toJSON()
+        return response
     } catch (error) {
         console.log("ERROR twitchServices.fetch: ", error)
         response.success = false
         response.error   = "Error fetch"
-        return response.toJSON()
+        return response
     }
 }
 

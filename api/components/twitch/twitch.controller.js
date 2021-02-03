@@ -8,7 +8,7 @@ twitchController.data = async function(req, res) {
         let response = new ApiResponse()
 
         let query = [req.query.username]
-        response = await services.fetch(services.ENDPOINTS.USER_DATA, //services.QUERY_TYPE.USER_DATA,
+        response = await services.fetch(services.ENDPOINTS.USER_DATA,
                                         query, 
                                         services.PARAM_NAME.LOGIN)
 
@@ -17,7 +17,7 @@ twitchController.data = async function(req, res) {
         }
 
         // Fetch user stream status
-        let userStreamStatus = await services.fetch(services.ENDPOINTS.STREAM_STATUS, //services.QUERY_TYPE.STREAM_STATUS, 
+        let userStreamStatus = await services.fetch(services.ENDPOINTS.STREAM_STATUS,
                                                     query)
         
         if (!userStreamStatus.success || !(Array.isArray(userStreamStatus.data) && userStreamStatus.data.length)) {
@@ -25,10 +25,7 @@ twitchController.data = async function(req, res) {
         }
 
         // Add stream status to user data
-        console.log("Stream status: ", userStreamStatus)
-        console.log("User data: ", response.data[0])
         Object.assign(response.data[0], userStreamStatus.data[0])
-            
         res.json(response)
     } catch (error) {
         console.log("Error twitchController.data: ", error)
@@ -42,11 +39,10 @@ twitchController.following = async function(req, res) {
     let username = req.query.username
     let user_id  = req.query.id
     let cursor   = req.query.cursor
-    let response = await services.fetch(services.ENDPOINTS.USER_FOLLOWING, //services.QUERY_TYPE.USER_FOLLOWING, 
+    let response = await services.fetch(services.ENDPOINTS.USER_FOLLOWING, 
                                         user_id, 
                                         undefined, 
                                         cursor)
-    //console.log("FOLLOWING: ", JSON.stringify(response))
     res.json(response)
 }
 
@@ -61,6 +57,7 @@ twitchController.followers = async function(req, res) {
     res.json(response)
 }
 
+// Refresh token
 twitchController.token = async function(req, res) {
     data = await services.generateAccessToken()
     if (data.access_token) {

@@ -5,12 +5,12 @@ class ApiResponse {
         this.error   = error
     }
 
-    toJSON() {
-        return Object.getOwnPropertyNames(this).reduce((a, b) => {
-            a[b] = this[b]
-            return a
-        }, {})
-    }
+    // toJSON() {
+    //     return Object.getOwnPropertyNames(this).reduce((a, b) => {
+    //         a[b] = this[b]
+    //         return a
+    //     }, {})
+    // }
 
 }
 
