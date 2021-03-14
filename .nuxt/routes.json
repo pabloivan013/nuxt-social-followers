@@ -1,0 +1,23 @@
+[
+  {
+    "name": "index_",
+    "path": "/index_",
+    "component": "C:\\\\Users\\\\Pablo\\\\Desktop\\\\github\\\\nuxt-twitch-followers\\\\twitch-followers\\\\pages\\\\index_.vue",
+    "chunkName": "pages/index_",
+    "_name": "_99eb4562"
+  },
+  {
+    "name": "inspire",
+    "path": "/inspire",
+    "component": "C:\\\\Users\\\\Pablo\\\\Desktop\\\\github\\\\nuxt-twitch-followers\\\\twitch-followers\\\\pages\\\\inspire.vue",
+    "chunkName": "pages/inspire",
+    "_name": "_4274a370"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\Pablo\\\\Desktop\\\\github\\\\nuxt-twitch-followers\\\\twitch-followers\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_710c25c0"
+  }
+]
