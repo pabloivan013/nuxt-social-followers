@@ -2,22 +2,22 @@
   {
     "name": "index_",
     "path": "/index_",
-    "component": "C:\\\\Users\\\\Pablo\\\\Desktop\\\\github\\\\nuxt-twitch-followers\\\\twitch-followers\\\\pages\\\\index_.vue",
+    "component": "/app/pages/index_.vue",
     "chunkName": "pages/index_",
-    "_name": "_99eb4562"
+    "_name": "_d80d0092"
   },
   {
     "name": "inspire",
     "path": "/inspire",
-    "component": "C:\\\\Users\\\\Pablo\\\\Desktop\\\\github\\\\nuxt-twitch-followers\\\\twitch-followers\\\\pages\\\\inspire.vue",
+    "component": "/app/pages/inspire.vue",
     "chunkName": "pages/inspire",
-    "_name": "_4274a370"
+    "_name": "_1bbad8e0"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\Pablo\\\\Desktop\\\\github\\\\nuxt-twitch-followers\\\\twitch-followers\\\\pages\\\\index.vue",
+    "component": "/app/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_710c25c0"
+    "_name": "_2dfb1658"
   }
 ]
