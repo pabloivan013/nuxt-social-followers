@@ -19,6 +19,9 @@
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.3",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "vue": "^2.6.12",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^5.25.1"
   }
 }
