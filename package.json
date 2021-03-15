@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "nuxt",
+    "dev": "nuxt",
     "build": "nuxt build",
-    "_start": "nuxt start",
+    "start": "nuxt start",
+    "heroku-postbuild": "npm run build",
     "generate": "nuxt generate"
   },
   "dependencies": {
