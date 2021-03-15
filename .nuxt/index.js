@@ -52,7 +52,7 @@ Vue.use(Meta, {"keyName":"head","attribute":"data-n-head","ssrAttribute":"data-n
 const defaultTransition = {"name":"page","mode":"out-in","appear":true,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
 async function createApp(ssrContext, config = {}) {
-  const router = await createRouter(ssrContext)
+  const router = await createRouter(ssrContext, config)
 
   // Create Root instance
 
