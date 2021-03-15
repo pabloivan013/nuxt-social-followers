@@ -2,7 +2,7 @@
   <div>
     <v-container>
       <v-row>
-        <v-col cols="12" sm="6" md="6">
+        <v-col cols="12" md="6">
           <v-card
             elevation="3"
             :loading="loading_username"
@@ -39,30 +39,30 @@
               </v-container>
             </v-form>
             <v-card-actions>
-              <v-row no-gutters>
-                <v-col cols="8">
-                  <v-row>
-                    <v-col class="col-auto py-md-0 pr-md-2">
-                      <v-btn
-                        :disabled="!valid_username || !username_data"
-                        v-bind:color="platform.color"
-                        @click="getUserFollowType(FOLLOWTYPE.FOLLOWING)"
-                      >
-                        Following
-                      </v-btn>
-                    </v-col>
-                    <v-col class="col-auto py-md-0 pl-md-0">
-                      <v-btn
-                        :disabled="!valid_username || !username_data"
-                        v-bind:color="platform.color"
-                        @click="getUserFollowType(FOLLOWTYPE.FOLLOWERS)"
-                      >
-                        Followers
-                      </v-btn>
-                    </v-col>
-                  </v-row>
-                </v-col>
-                <v-col cols="4"  class="text-center">
+              <v-row >
+                
+                  
+              <v-col  cols="auto" class="pt-2">
+                <v-btn
+                  :disabled="!valid_username || !username_data"
+                  v-bind:color="platform.color"
+                  @click="getUserFollowType(FOLLOWTYPE.FOLLOWING)"
+                >
+                  Following
+                </v-btn>
+              </v-col>
+              <v-col  cols="auto"  class="pt-2">
+                <v-btn
+                  :disabled="!valid_username || !username_data"
+                  v-bind:color="platform.color"
+                  @click="getUserFollowType(FOLLOWTYPE.FOLLOWERS)"
+                >
+                  Followers
+                </v-btn>
+              </v-col>
+                  
+                
+                <v-col cols="auto" class="text-center">
                   <div v-if="loading_follows">
                     <v-progress-circular
                       indeterminate
