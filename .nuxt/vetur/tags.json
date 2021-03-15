@@ -2,25 +2,49 @@
   "LoadingBar": {
     "description": "Auto imported from components/LoadingBar.vue"
   },
+  "LazyLoadingBar": {
+    "description": "Auto imported from components/LoadingBar.vue"
+  },
   "LoadingCircular": {
+    "description": "Auto imported from components/LoadingCircular.vue"
+  },
+  "LazyLoadingCircular": {
     "description": "Auto imported from components/LoadingCircular.vue"
   },
   "Logo": {
     "description": "Auto imported from components/Logo.vue"
   },
+  "LazyLogo": {
+    "description": "Auto imported from components/Logo.vue"
+  },
   "Time": {
+    "description": "Auto imported from components/Time.vue"
+  },
+  "LazyTime": {
     "description": "Auto imported from components/Time.vue"
   },
   "VuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
   },
+  "LazyVuetifyLogo": {
+    "description": "Auto imported from components/VuetifyLogo.vue"
+  },
   "TwitchUserCard": {
+    "description": "Auto imported from components/twitch/TwitchUserCard.vue"
+  },
+  "LazyTwitchUserCard": {
     "description": "Auto imported from components/twitch/TwitchUserCard.vue"
   },
   "TwitchUserFollowersCard": {
     "description": "Auto imported from components/twitch/TwitchUserFollowersCard.vue"
   },
+  "LazyTwitchUserFollowersCard": {
+    "description": "Auto imported from components/twitch/TwitchUserFollowersCard.vue"
+  },
   "TwitchUserFollowingCard": {
+    "description": "Auto imported from components/twitch/TwitchUserFollowingCard.vue"
+  },
+  "LazyTwitchUserFollowingCard": {
     "description": "Auto imported from components/twitch/TwitchUserFollowingCard.vue"
   }
 }
