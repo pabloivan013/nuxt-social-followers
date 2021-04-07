@@ -25,12 +25,18 @@ twitchServices.ENDPOINTS  = ENDPOINTS
 twitchServices.storage    = localStorage
 
 twitchServices.validateAccessToken = async function(token) {
+    let valid = false
     status = await fetch('https://id.twitch.tv/oauth2/validate', {
                 method:'GET',
                 headers: {'Authorization': `OAuth ${token}`}
             })
-            .then(res => res.json())
+            .then(res =>{
+                if (res.ok)
+                    valid = true
+                return res.json()
+            })
     console.log("status: ", status)
+    return valid
 }
 
 twitchServices.generateAccessToken = async function() {

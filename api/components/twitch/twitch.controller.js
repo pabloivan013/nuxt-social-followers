@@ -59,11 +59,14 @@ twitchController.followers = async function(req, res) {
 
 // Refresh token
 twitchController.token = async function(req, res) {
+    let response = new ApiResponse()
     data = await services.generateAccessToken()
-    if (data.access_token) {
-        services.validateAccessToken(data.access_token)
+    if (data.access_token && await services.validateAccessToken(data.access_token)) {
+        response.success = true
+        const {access_token, ...dataNoToken} = data
+        response.data = dataNoToken
     }
-    res.json(data)
+    res.json(response)
 }
 
 module.exports = twitchController
