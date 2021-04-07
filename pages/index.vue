@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container>
-      <v-row>
+      <v-row justify="center">
         <v-col cols="12" md="6">
           <v-card
             elevation="3"
@@ -41,7 +41,6 @@
             <v-card-actions>
               <v-row >
                 
-                  
               <v-col  cols="auto" class="pt-2">
                 <v-btn
                   :disabled="!valid_username || !username_data"
@@ -61,7 +60,6 @@
                 </v-btn>
               </v-col>
                   
-                
                 <v-col cols="auto" class="text-center">
                   <div v-if="loading_follows">
                     <v-progress-circular
@@ -74,10 +72,12 @@
             </v-card-actions>
           </v-card>
         </v-col>
-        <v-col sm="6" md="6">
+
+        <!-- User card -->
+        <v-col sm="6" md="6" v-if="valid_username">
           <v-row>
             <v-col>
-              <div v-if="valid_username">
+              <div>
                 <twitch-user-card :userData="username_data" />
               </div>
             </v-col>
@@ -103,6 +103,7 @@
           </v-row>
         </v-col>
       </v-row>
+      
       <v-row v-if="user_follows.total">
         <v-col>
           <v-card elevation="3">
@@ -117,7 +118,7 @@
         </v-col>
       </v-row>
       <v-row
-        v-if="!(!valid_username || !username_data || !query_follow_type)"
+        v-if="(valid_username && username_data && query_follow_type)"
         class="text-center"
       >
         <v-col>
@@ -193,6 +194,10 @@ export default {
     }
   },
   created: function() {
+    let queryUsername = this.$route.query.username
+    if (queryUsername)
+      this.username = queryUsername
+    
     this.debouncedUser = _.debounce(this.getUserData, 500);
   },
   methods: {
