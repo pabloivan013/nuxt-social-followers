@@ -27,6 +27,7 @@ module.exports={
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/plugins/gtag'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -36,12 +37,13 @@ module.exports={
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    '@nuxtjs/google-analytics'
+    //'@nuxtjs/google-analytics'
   ],
 
   googleAnalytics: {
     // Options
-    id: 'G-L16WN5D174'
+    // Works with olds universal tags
+    //id: 'G-L16WN5D174'
   },
   
   // Modules (https://go.nuxtjs.dev/config-modules)

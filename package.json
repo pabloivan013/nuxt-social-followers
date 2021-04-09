@@ -15,7 +15,8 @@
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "node-localstorage": "^2.1.6",
-    "nuxt": "^2.15.2"
+    "nuxt": "^2.15.2",
+    "vue-gtag": "^1.11.0"
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.4.0",
