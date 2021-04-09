@@ -36,8 +36,14 @@ module.exports={
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/google-analytics'
   ],
 
+  googleAnalytics: {
+    // Options
+    id: 'G-L16WN5D174'
+  },
+  
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
   ],
