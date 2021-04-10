@@ -57,7 +57,7 @@ export default {
       right: true,
       rightDrawer: false,
       darkTheme: false,
-      title: 'Social followers'
+      title: 'Twitch followers'
     }
   }
 }

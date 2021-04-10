@@ -5,7 +5,7 @@ module.exports={
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - twitch-followers',
+    titleTemplate: '%s',
     title: 'Twitch Followers',
     meta: [
       { charset: 'utf-8' },

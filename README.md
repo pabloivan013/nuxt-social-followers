@@ -1,4 +1,8 @@
-# twitch-followers
+# Twitch followers
+
+###### See who is following certain users
+
+[Twitch followers](https://nuxt-followers.herokuapp.com/)
 
 ## Build Setup
 
@@ -18,4 +22,4 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-# nuxt-social-followers
+
